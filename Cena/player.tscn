@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl6tbmlwywgbp"]
+
+[ext_resource type="Script" path="res://Script/CharacterBody3D.gd" id="1_ia7kf"]
+[ext_resource type="PackedScene" uid="uid://c0fb7ubdwscur" path="res://Cena/CellphoneNotUsing.tscn" id="2_w62ro"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xdkhq"]
+height = 3.18467
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ia7kf")
+
+[node name="Neck" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+far = 300.0
+metadata/_edit_lock_ = true
+
+[node name="Cellphone" parent="Neck/Camera3D" instance=ExtResource("2_w62ro")]
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0211506)
+shape = SubResource("CapsuleShape3D_xdkhq")

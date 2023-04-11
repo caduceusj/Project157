@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://r2jbwxaicb65"]
+
+[ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_cqtkh"]
+[ext_resource type="Texture2D" uid="uid://c73qlh586sml2" path="res://Assets/HouseStuff/SeekPng.com_mesh-texture-png_939457.png" id="2_a2o2j"]
+
+[sub_resource type="Curve" id="Curve_vgx0f"]
+max_value = 1.5
+_data = [Vector2(0, 0.141104), 0.0, inf, 0, 0, Vector2(0, 0.447853), 0.0, 84.6626, 0, 0, Vector2(0.00362319, 0.708589), 0.0, 0.0, 0, 0, Vector2(0.228261, 1.05828), 0.0, 0.0, 0, 0, Vector2(0.358696, 1.05828), 0.0, 0.0, 0, 0, Vector2(0.713768, 1.07669), 0.0, 0.0, 0, 0, Vector2(1, 1.05828), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_eacnp"]
+shape = 0
+section_length = 0.5
+curve = SubResource("Curve_vgx0f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5rr3"]
+render_priority = 0
+shader = ExtResource("1_cqtkh")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(3, 3)
+shader_parameter/albedo = ExtResource("2_a2o2j")
+
+[node name="Node3D" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19123, 0)
+mesh = SubResource("RibbonTrailMesh_eacnp")
+surface_material_override/0 = SubResource("ShaderMaterial_e5rr3")

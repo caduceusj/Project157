@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://o6t60pjqki87"]
+
+[ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_0altd"]
+[ext_resource type="Texture2D" uid="uid://db1i5nnvd3ruu" path="res://Assets/Concrete/Concrete_017_basecolor.jpg" id="2_xf7ji"]
+[ext_resource type="Texture2D" uid="uid://bhseempipd2c2" path="res://godot-psx-master/placa1.jpg" id="3_8a8rj"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jq4yj"]
+top_radius = 0.05
+bottom_radius = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q2le"]
+render_priority = 0
+shader = ExtResource("1_0altd")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("2_xf7ji")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gdirb"]
+size = Vector2(1, 0.75)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ecky"]
+render_priority = 0
+shader = ExtResource("1_0altd")
+shader_parameter/jitter = 0.0
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(0, 1, 0.145098, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("3_8a8rj")
+
+[node name="Base" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_jq4yj")
+surface_material_override/0 = SubResource("ShaderMaterial_6q2le")
+
+[node name="PlacaFrente" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.0612476)
+mesh = SubResource("QuadMesh_gdirb")
+surface_material_override/0 = SubResource("ShaderMaterial_6ecky")
+
+[node name="PlacaTras" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -0.061)
+mesh = SubResource("QuadMesh_gdirb")
+surface_material_override/0 = SubResource("ShaderMaterial_6ecky")

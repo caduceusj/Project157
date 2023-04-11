@@ -1,0 +1,127 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwtgj76egfiwf"]
+
+[ext_resource type="Script" path="res://Script/CellphoneUI.gd" id="1_dsrx0"]
+
+[node name="Cellphone" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dsrx0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 181.0
+offset_top = 36.0
+offset_right = 459.0
+offset_bottom = 446.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -196.0
+offset_right = 130.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.560784, 0.490196, 1)
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -101.0
+offset_right = 21.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+button_pressed = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -123.0
+offset_right = 37.5
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Flashlight"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 277.0
+offset_top = 391.0
+offset_right = 367.0
+offset_bottom = 422.0
+text = "LEAVE"
+
+[node name="Calling" type="MarginContainer" parent="CanvasLayer"]
+offset_left = 206.0
+offset_top = 71.0
+offset_right = 433.0
+offset_bottom = 428.0
+size_flags_vertical = 4
+
+[node name="Button2" type="Button" parent="CanvasLayer/Calling"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "LEAVE"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Calling"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Unknown Caller"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Calling"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Answer" type="Button" parent="CanvasLayer/Calling/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+disabled = true
+text = "Answer"
+
+[node name="Reject" type="Button" parent="CanvasLayer/Calling/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+disabled = true
+text = "Reject"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Count" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_top = 37.0
+offset_right = 80.0
+offset_bottom = 64.0
+
+[connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Calling/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Calling/HBoxContainer/Answer" to="." method="_on_answer_pressed"]
+[connection signal="pressed" from="CanvasLayer/Calling/HBoxContainer/Reject" to="." method="_on_reject_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://kiewjo6u2j7c"]
+
+[ext_resource type="ArrayMesh" uid="uid://35ek6bw4vx2s" path="res://Assets/Barrel/blue_barrel.tres" id="1_ukrxl"]
+
+[node name="BlueBarrel" type="MeshInstance3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = ExtResource("1_ukrxl")

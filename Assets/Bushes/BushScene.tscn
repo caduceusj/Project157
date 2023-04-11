@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgupk5t6j87ne"]
+
+[ext_resource type="ArrayMesh" uid="uid://drm41aft3ar6t" path="res://Assets/Bushes/BushScene.tres" id="1_pml35"]
+
+[node name="Bush" type="Node3D"]
+
+[node name="RootNode" type="Node3D" parent="."]
+
+[node name="bush02" type="MeshInstance3D" parent="RootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.62921e-07, 0, -1.62921e-07, 1, 0, 0, 0)
+mesh = ExtResource("1_pml35")
+skeleton = NodePath("")

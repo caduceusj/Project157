@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://k6cxxdjotqlk"]
+
+[ext_resource type="PackedScene" uid="uid://dfrs2d3tmdi8x" path="res://Assets/Grass/Grass.tscn" id="1_belqq"]
+
+[node name="Grasses" type="Node3D"]
+
+[node name="LowPolyGrass" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.390321, 0, 0.962752)
+
+[node name="LowPolyGrass2" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53671, 0, 0.976714)
+
+[node name="LowPolyGrass3" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74512, 0, 1.11396)
+
+[node name="LowPolyGrass4" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62222, 0, 1.17145)
+
+[node name="LowPolyGrass5" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.876929, 0, 1.02149)
+
+[node name="LowPolyGrass6" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675663, 0, 2.54889)
+
+[node name="LowPolyGrass7" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.494417, 0, 2.65079)
+
+[node name="LowPolyGrass8" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7988, 0, 2.6834)
+
+[node name="LowPolyGrass9" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16079, 0, 2.98183)
+
+[node name="LowPolyGrass10" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30413, -4.76837e-07, 2.99508)
+
+[node name="LowPolyGrass11" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37645, 0, 1.33558)
+
+[node name="LowPolyGrass12" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08018, 4.76837e-07, 2.92698)
+
+[node name="LowPolyGrass13" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.10369, -4.76837e-07, 1.1768)
+
+[node name="LowPolyGrass14" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96271, -4.76837e-07, 2.88367)
+
+[node name="LowPolyGrass15" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03721, 0, 1.26743)
+
+[node name="LowPolyGrass16" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74913, 0, 2.74492)
+
+[node name="LowPolyGrass17" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80846, 0, 1.30036)
+
+[node name="LowPolyGrass18" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40811, 0, 2.72718)
+
+[node name="LowPolyGrass19" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52174, 0, 1.25677)
+
+[node name="LowPolyGrass20" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33255, 0, 2.64496)
+
+[node name="LowPolyGrass21" parent="." instance=ExtResource("1_belqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48402, 0, 1.19915)
