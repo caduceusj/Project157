@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bbw2rcjpu4rm7"]
+[gd_scene load_steps=31 format=3 uid="uid://bbw2rcjpu4rm7"]
 
 [ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_mudyr"]
 [ext_resource type="Texture2D" uid="uid://r0setuiexmem" path="res://Assets/Grass 11 - 128x128.png" id="2_altt7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c73qlh586sml2" path="res://Assets/HouseStuff/SeekPng.com_mesh-texture-png_939457.png" id="4_vhp6b"]
 [ext_resource type="PackedScene" uid="uid://r2jbwxaicb65" path="res://Assets/Gateway/GateWayDoor.tscn" id="5_3r8ng"]
 [ext_resource type="MeshLibrary" uid="uid://cwlpl112cq0pk" path="res://Cena/UrbanDecorations.tres" id="6_xtqkj"]
+[ext_resource type="PackedScene" uid="uid://cl0t2x4vi7prf" path="res://Cena/CoveiroHouse.tscn" id="7_riyb3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7r2ni"]
 size = Vector3(60, 1, 100)
@@ -648,3 +649,6 @@ data = {
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dlgq3")
+
+[node name="CemeteryShack" parent="." instance=ExtResource("7_riyb3")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15.143, 0.871965, -0.267674)

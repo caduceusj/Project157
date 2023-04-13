@@ -504,7 +504,7 @@ mesh = SubResource("BoxMesh_te4yh")
 skeleton = NodePath("../../Node3D")
 
 [node name="Wall5" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 1, -29.5, 5, -1.59162e-12)
+transform = Transform3D(1, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 1, -29.5, 5, 0)
 mesh = SubResource("BoxMesh_7427j")
 skeleton = NodePath("../../Node3D")
 
