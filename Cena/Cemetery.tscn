@@ -1,14 +1,14 @@
-[gd_scene load_steps=36 format=3 uid="uid://bbw2rcjpu4rm7"]
+[gd_scene load_steps=38 format=3 uid="uid://bbw2rcjpu4rm7"]
 
 [ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_mudyr"]
 [ext_resource type="Texture2D" uid="uid://r0setuiexmem" path="res://Assets/Grass 11 - 128x128.png" id="2_altt7"]
 [ext_resource type="PackedScene" uid="uid://d0ltc007ta6f1" path="res://Cena/Tombstone_3d.tscn" id="3_vluev"]
-[ext_resource type="Texture2D" uid="uid://b3brgafjdvabn" path="res://Assets/Ground_Dirt_007_basecolor.jpg" id="4_aukk6"]
 [ext_resource type="Texture2D" uid="uid://c73qlh586sml2" path="res://Assets/HouseStuff/SeekPng.com_mesh-texture-png_939457.png" id="4_vhp6b"]
 [ext_resource type="PackedScene" uid="uid://r2jbwxaicb65" path="res://Assets/Gateway/GateWayDoor.tscn" id="5_3r8ng"]
-[ext_resource type="Texture2D" uid="uid://bb6uwnerje1cq" path="res://Assets/Concrete_Wall_005_Base Color.jpg" id="5_qpvce"]
+[ext_resource type="Texture2D" uid="uid://828wwu5dwtev" path="res://Assets/Wall_Tiles_Stone_001_basecolor.jpg" id="5_klrsk"]
 [ext_resource type="MeshLibrary" uid="uid://cwlpl112cq0pk" path="res://Cena/UrbanDecorations.tres" id="6_xtqkj"]
 [ext_resource type="PackedScene" uid="uid://cl0t2x4vi7prf" path="res://Cena/CoveiroHouse.tscn" id="7_riyb3"]
+[ext_resource type="PackedScene" uid="uid://vhb4h3c5bmin" path="res://Assets/Church/church.tscn" id="9_khe2m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7r2ni"]
 size = Vector3(60, 1, 100)
@@ -21,25 +21,10 @@ shader_parameter/jitter_z_coordinate = true
 shader_parameter/jitter_depth_independent = false
 shader_parameter/affine_texture_mapping = false
 shader_parameter/alpha_scissor = 1.0
-shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_color = Color(0.682353, 0.498039, 0.223529, 1)
 shader_parameter/emission_color = Color(1, 1, 1, 1)
 shader_parameter/texture_size = Vector2(0.05, 0.05)
 shader_parameter/albedo = ExtResource("2_altt7")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_p0tkx"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gjfqa"]
-render_priority = 0
-shader = ExtResource("1_mudyr")
-shader_parameter/jitter = 0.5
-shader_parameter/jitter_z_coordinate = true
-shader_parameter/jitter_depth_independent = false
-shader_parameter/affine_texture_mapping = true
-shader_parameter/alpha_scissor = 1.0
-shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/emission_color = Color(1, 1, 1, 1)
-shader_parameter/texture_size = Vector2(1, 1)
-shader_parameter/albedo = ExtResource("4_aukk6")
 
 [sub_resource type="QuadMesh" id="QuadMesh_drop6"]
 size = Vector2(45, 3.5)
@@ -63,8 +48,14 @@ size = Vector2(55, 3.5)
 [sub_resource type="QuadMesh" id="QuadMesh_qtc3b"]
 size = Vector2(100, 3.5)
 
+[sub_resource type="QuadMesh" id="QuadMesh_yklx7"]
+size = Vector2(24, 3.5)
+
 [sub_resource type="QuadMesh" id="QuadMesh_yoym1"]
 size = Vector2(58, 3.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_yl3uk"]
+size = Vector2(24, 3.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5wi3i"]
 data = PackedVector3Array(22.5, -1.75, 0, -22.5, -1.75, 0, 22.5, 1.75, 0, -22.5, -1.75, 0, -22.5, 1.75, 0, 22.5, 1.75, 0)
@@ -75,15 +66,18 @@ size = Vector3(1, 0.5, 100)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7klle"]
 render_priority = 0
 shader = ExtResource("1_mudyr")
-shader_parameter/jitter = 0.5
+shader_parameter/jitter = 0.047
 shader_parameter/jitter_z_coordinate = true
-shader_parameter/jitter_depth_independent = false
+shader_parameter/jitter_depth_independent = true
 shader_parameter/affine_texture_mapping = false
 shader_parameter/alpha_scissor = 1.0
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/emission_color = Color(1, 1, 1, 1)
-shader_parameter/texture_size = Vector2(1, 0.1)
-shader_parameter/albedo = ExtResource("5_qpvce")
+shader_parameter/texture_size = Vector2(0.25, 0.25)
+shader_parameter/albedo = ExtResource("5_klrsk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_riqhk"]
+size = Vector3(1, 0.5, 24)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u85ot"]
 size = Vector3(1, 0.5, 58)
@@ -98,6 +92,19 @@ size = Vector3(1, 0.5, 45)
 top_radius = 0.75
 bottom_radius = 0.75
 height = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8bqgg"]
+render_priority = 0
+shader = ExtResource("1_mudyr")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("5_klrsk")
 
 [sub_resource type="TorusMesh" id="TorusMesh_j86l1"]
 
@@ -135,195 +142,107 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 mesh = SubResource("BoxMesh_7r2ni")
 surface_material_override/0 = SubResource("ShaderMaterial_skir0")
 
-[node name="Linha de Covas2" parent="." instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10)
-
-[node name="MeshInstance3D3" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D4" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D5" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D6" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D7" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D8" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D9" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D10" parent="Linha de Covas2" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Linha de Covas2"]
-
-[node name="Linha de Covas3" parent="." instance=ExtResource("3_vluev")]
+[node name="Linha de Covas11" parent="." instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -20)
 
-[node name="MeshInstance3D3" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D3" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D4" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D4" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D5" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D5" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D6" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D6" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D7" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D7" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D8" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D8" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D9" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D9" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D10" parent="Linha de Covas3" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D10" parent="Linha de Covas11" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Linha de Covas3"]
+[node name="StaticBody3D67932" type="StaticBody3D" parent="Linha de Covas11"]
 
-[node name="Linha de Covas4" parent="." instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30)
+[node name="Linha de Covas12" parent="." instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -34)
 
-[node name="MeshInstance3D3" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D3" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D4" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D4" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D5" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D5" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D6" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D6" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D7" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D7" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D8" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D8" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D9" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D9" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D10" parent="Linha de Covas4" instance=ExtResource("3_vluev")]
+[node name="MeshInstance3D10" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Linha de Covas4"]
-
-[node name="Linha de Covas5" parent="." instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -40)
-
-[node name="MeshInstance3D3" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+[node name="MeshInstance3D11" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D4" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+[node name="MeshInstance3D12" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D5" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+[node name="MeshInstance3D13" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -10)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Linha de Covas5/MeshInstance3D5"]
-transform = Transform3D(1.5, 0, 0, 0, -5.46392e-08, -1.1, 0, 1.25, -4.80825e-08, 0, -0.781558, 1.04203)
-mesh = SubResource("CapsuleMesh_p0tkx")
-surface_material_override/0 = SubResource("ShaderMaterial_gjfqa")
-
-[node name="MeshInstance3D6" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+[node name="MeshInstance3D14" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -10)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D7" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+[node name="MeshInstance3D15" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -10)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D8" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+[node name="MeshInstance3D16" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -10)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D9" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+[node name="MeshInstance3D17" parent="Linha de Covas12" instance=ExtResource("3_vluev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -10)
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D10" parent="Linha de Covas5" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Linha de Covas5"]
-
-[node name="Linha de Covas6" parent="." instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10)
-
-[node name="MeshInstance3D3" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D4" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D5" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D6" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D7" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D8" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D9" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D10" parent="Linha de Covas6" instance=ExtResource("3_vluev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Linha de Covas6"]
+[node name="StaticBody3D67932" type="StaticBody3D" parent="Linha de Covas12"]
 
 [node name="Linha de Covas7" parent="." instance=ExtResource("3_vluev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 20)
@@ -464,8 +383,14 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_wl78x")
 
 [node name="Grade7" type="MeshInstance3D" parent="Grade"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.486, 0, -29.5)
-mesh = SubResource("QuadMesh_yoym1")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.486, 0, -47.3015)
+mesh = SubResource("QuadMesh_yklx7")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_wl78x")
+
+[node name="Grade11" type="MeshInstance3D" parent="Grade"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 76.486, 0, -11.7742)
+mesh = SubResource("QuadMesh_yklx7")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_wl78x")
 
@@ -482,8 +407,14 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_wl78x")
 
 [node name="Grade8" type="MeshInstance3D" parent="Grade"]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 76.4863, 0, -29.8857)
-mesh = SubResource("QuadMesh_yoym1")
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 76.4863, 0, -47.4667)
+mesh = SubResource("QuadMesh_yl3uk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_wl78x")
+
+[node name="Grade12" type="MeshInstance3D" parent="Grade"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 76.4863, 0, -11.3495)
+mesh = SubResource("QuadMesh_yl3uk")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_wl78x")
 
@@ -501,8 +432,26 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_7klle")
 
 [node name="Wall3" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, -49.5)
-mesh = SubResource("BoxMesh_u85ot")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.7753, 1, -49.5)
+mesh = SubResource("BoxMesh_riqhk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_7klle")
+
+[node name="Wall6" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.775, 5, -49.5)
+mesh = SubResource("BoxMesh_riqhk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_7klle")
+
+[node name="Wall11" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.0058, 1, -49.5)
+mesh = SubResource("BoxMesh_riqhk")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_7klle")
+
+[node name="Wall12" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.006, 5, -49.5)
+mesh = SubResource("BoxMesh_riqhk")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_7klle")
 
@@ -530,12 +479,6 @@ mesh = SubResource("BoxMesh_7427j")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_7klle")
 
-[node name="Wall6" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5, -49.5)
-mesh = SubResource("BoxMesh_u85ot")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("ShaderMaterial_7klle")
-
 [node name="Wall7" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5, 49.5)
 mesh = SubResource("BoxMesh_u85ot")
@@ -557,15 +500,18 @@ surface_material_override/0 = SubResource("ShaderMaterial_7klle")
 [node name="Pillar" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 3.79301, 4)
 mesh = SubResource("CylinderMesh_ikef2")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Circle" type="MeshInstance3D" parent="Pillar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
 mesh = SubResource("TorusMesh_j86l1")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Ornament" type="MeshInstance3D" parent="Pillar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
 mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Node3D" parent="Pillar" instance=ExtResource("5_3r8ng")]
 transform = Transform3D(-2.62268e-07, 0, 2.5, 0, 2, 0, -6, 0, -1.09278e-07, 0, -0.521, -3.9)
@@ -581,15 +527,18 @@ shape = SubResource("ConcavePolygonShape3D_cibl2")
 [node name="Pillar2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 3.793, -4)
 mesh = SubResource("CylinderMesh_pxc1a")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Circle" type="MeshInstance3D" parent="Pillar2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
 mesh = SubResource("TorusMesh_j86l1")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Ornament" type="MeshInstance3D" parent="Pillar2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
 mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Pillar2"]
 
@@ -599,33 +548,89 @@ shape = SubResource("ConcavePolygonShape3D_tj7tf")
 [node name="Pillar3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 3.793, -49.5)
 mesh = SubResource("CylinderMesh_pxc1a")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Circle" type="MeshInstance3D" parent="Pillar3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
 mesh = SubResource("TorusMesh_j86l1")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Ornament" type="MeshInstance3D" parent="Pillar3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
 mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Pillar3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5hndp")
 
+[node name="Pillar7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61473, 3.793, -49.5)
+mesh = SubResource("CylinderMesh_pxc1a")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
+
+[node name="Circle" type="MeshInstance3D" parent="Pillar7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
+mesh = SubResource("TorusMesh_j86l1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
+
+[node name="Ornament" type="MeshInstance3D" parent="Pillar7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
+mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pillar7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5hndp")
+
+[node name="Pillar8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22867, 3.793, -49.5)
+mesh = SubResource("CylinderMesh_pxc1a")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
+
+[node name="Node3D3" parent="Pillar8" instance=ExtResource("5_3r8ng")]
+transform = Transform3D(-9.5, 0, -5.97641e-07, 0, 3.167, 0, 1.43446e-06, 0, -3.958, 5.43324, -0.52099, 0.205315)
+skeleton = NodePath("../../Pillar")
+
+[node name="Node3D4" parent="Pillar8" instance=ExtResource("5_3r8ng")]
+transform = Transform3D(9.5, 0, 0, 0, 3.167, 0, 0, 0, 3.958, 5.43324, -0.52099, 0.205315)
+skeleton = NodePath("../../Pillar")
+
+[node name="Circle" type="MeshInstance3D" parent="Pillar8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
+mesh = SubResource("TorusMesh_j86l1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
+
+[node name="Ornament" type="MeshInstance3D" parent="Pillar8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
+mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pillar8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5hndp")
+
 [node name="Pillar5" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 3.793, -49.5)
 mesh = SubResource("CylinderMesh_pxc1a")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Circle" type="MeshInstance3D" parent="Pillar5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
 mesh = SubResource("TorusMesh_j86l1")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Ornament" type="MeshInstance3D" parent="Pillar5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
 mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Pillar5"]
 
@@ -635,15 +640,18 @@ shape = SubResource("ConcavePolygonShape3D_1t0oa")
 [node name="Pillar4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 3.793, 49.5)
 mesh = SubResource("CylinderMesh_pxc1a")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Circle" type="MeshInstance3D" parent="Pillar4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
 mesh = SubResource("TorusMesh_j86l1")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Ornament" type="MeshInstance3D" parent="Pillar4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
 mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Pillar4"]
 
@@ -653,15 +661,18 @@ shape = SubResource("ConcavePolygonShape3D_nq00x")
 [node name="Pillar6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5, 3.793, 49.5)
 mesh = SubResource("CylinderMesh_pxc1a")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Circle" type="MeshInstance3D" parent="Pillar6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51328, -0.0545988)
 mesh = SubResource("TorusMesh_j86l1")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="Ornament" type="MeshInstance3D" parent="Pillar6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95963, 0)
 mesh = SubResource("SphereMesh_1fnmy")
+surface_material_override/0 = SubResource("ShaderMaterial_8bqgg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Pillar6"]
 
@@ -679,7 +690,7 @@ data = {
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.5, 0)
 mesh_library = ExtResource("6_xtqkj")
 data = {
-"cells": PackedInt32Array(11, 7, 3, 8, 7, 3, 4, 7, 3, 0, 7, 3, 65533, 7, 3, 65529, 7, 3, 11, 12, 3, 8, 12, 3, 5, 12, 3, 1, 12, 3, 65533, 12, 3, 65528, 12, 3, 65524, 12, 3, 65524, 7, 3, 65524, 17, 3, 65528, 17, 3, 65533, 17, 3, 1, 17, 3, 5, 17, 3, 9, 17, 3, 12, 17, 3, 65524, 22, 3, 65528, 22, 3, 65533, 22, 3, 1, 22, 3, 5, 22, 3, 8, 22, 3, 12, 22, 3)
+"cells": PackedInt32Array(11, 7, 3, 11, 12, 3, 65528, 12, 3, 65524, 12, 3, 65524, 7, 3, 65524, 17, 3, 65528, 17, 3, 12, 17, 3, 65524, 22, 3, 65528, 22, 3, 12, 22, 3, 7, 7, 3, 7, 12, 3, 8, 17, 3, 8, 22, 3, 4, 22, 3, 4, 17, 3, 4, 12, 3, 4, 7, 3, 65528, 7, 3, 65531, 7, 3, 65531, 12, 3, 65531, 17, 3, 65531, 22, 3)
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -689,3 +700,6 @@ shape = SubResource("ConcavePolygonShape3D_dlgq3")
 
 [node name="CemeteryShack" parent="." instance=ExtResource("7_riyb3")]
 transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -24.5581, 0.495408, 40.8897)
+
+[node name="Node3D" parent="." instance=ExtResource("9_khe2m")]
+transform = Transform3D(-5.46392e-09, 0, -0.125, 0, 0.125, 0, 0.125, 0, -5.46392e-09, -16.3158, 0.5, -2.316)

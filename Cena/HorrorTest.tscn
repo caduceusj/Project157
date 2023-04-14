@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bbw2rcjpu4rm7" path="res://Cena/Cemetery.tscn" id="28_aq8ws"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ymvv5"]
-size = Vector2(300, 300)
+size = Vector2(300, 500)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x7rx4"]
 render_priority = 0
@@ -90,7 +90,7 @@ theme_override_font_sizes/font_size = 30
 text = "LOREIPSU"
 
 [node name="Player" parent="Tracker" instance=ExtResource("2_m246t")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 14.8255, 0, 12.8014)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 56.8052, 0, 12.8014)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_ymvv5")
@@ -422,6 +422,14 @@ skeleton = NodePath("../Pavement")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -120)
 skeleton = NodePath("../Pavement")
 
+[node name="Pavement35" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0396, 0, -180.321)
+skeleton = NodePath("../Pavement")
+
+[node name="Pavement36" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -180)
+skeleton = NodePath("../Pavement")
+
 [node name="Pavement34" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -150)
 skeleton = NodePath("../Pavement")
@@ -430,4 +438,7 @@ skeleton = NodePath("../Pavement")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26464, 3.90606, 55.5568)
 
 [node name="Key" parent="." instance=ExtResource("24_sphbm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1618, 0.362506, -160.423)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.1618, 0.147284, -164.735)
+
+[node name="Pavement" parent="." instance=ExtResource("4_2tsvc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -180.178)
