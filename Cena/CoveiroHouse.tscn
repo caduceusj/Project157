@@ -1,6 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cl0t2x4vi7prf"]
+[gd_scene load_steps=34 format=3 uid="uid://cl0t2x4vi7prf"]
 
 [ext_resource type="Script" path="res://Cena/CoveiroHouse.gd" id="1_hic52"]
+[ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="2_tx7a4"]
+[ext_resource type="Texture2D" uid="uid://dymn5vcos8wfe" path="res://Assets/Wood 17 - 128x128.png" id="3_cva6l"]
+[ext_resource type="Texture2D" uid="uid://d0thurx0tc5o4" path="res://Assets/Wood 1 - 128x128.png" id="4_fnqci"]
+[ext_resource type="Texture2D" uid="uid://dv2pm1j3mkvt5" path="res://Assets/Roof 7 - 128x128.png" id="4_kdwwr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s8ib0"]
 size = Vector2(2, 2.5)
@@ -11,8 +15,34 @@ data = PackedVector3Array(1, 0, 1.25, -1, 0, 1.25, 1, 0, -1.25, -1, 0, 1.25, -1,
 [sub_resource type="BoxMesh" id="BoxMesh_4djlx"]
 size = Vector3(2, 1, 0.1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpc1g"]
+render_priority = 0
+shader = ExtResource("2_tx7a4")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(0.25, 0.25)
+shader_parameter/albedo = ExtResource("3_cva6l")
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w7a21"]
 data = PackedVector3Array(-1, 0.5, 0.05, 1, 0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, 0.05, 1, -0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, -0.05, -1, 0.5, -0.05, 1, -0.5, -0.05, -1, 0.5, -0.05, -1, -0.5, -0.05, 1, -0.5, -0.05, 1, 0.5, 0.05, 1, 0.5, -0.05, 1, -0.5, 0.05, 1, 0.5, -0.05, 1, -0.5, -0.05, 1, -0.5, 0.05, -1, 0.5, -0.05, -1, 0.5, 0.05, -1, -0.5, -0.05, -1, 0.5, 0.05, -1, -0.5, 0.05, -1, -0.5, -0.05, 1, 0.5, 0.05, -1, 0.5, 0.05, 1, 0.5, -0.05, -1, 0.5, 0.05, -1, 0.5, -0.05, 1, 0.5, -0.05, -1, -0.5, 0.05, 1, -0.5, 0.05, -1, -0.5, -0.05, 1, -0.5, 0.05, 1, -0.5, -0.05, -1, -0.5, -0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fxnm"]
+render_priority = 0
+shader = ExtResource("2_tx7a4")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(0.25, 0.25)
+shader_parameter/albedo = ExtResource("3_cva6l")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gebxo"]
 data = PackedVector3Array(-1, 0.5, 0.05, 1, 0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, 0.05, 1, -0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, -0.05, -1, 0.5, -0.05, 1, -0.5, -0.05, -1, 0.5, -0.05, -1, -0.5, -0.05, 1, -0.5, -0.05, 1, 0.5, 0.05, 1, 0.5, -0.05, 1, -0.5, 0.05, 1, 0.5, -0.05, 1, -0.5, -0.05, 1, -0.5, 0.05, -1, 0.5, -0.05, -1, 0.5, 0.05, -1, -0.5, -0.05, -1, 0.5, 0.05, -1, -0.5, 0.05, -1, -0.5, -0.05, 1, 0.5, 0.05, -1, 0.5, 0.05, 1, 0.5, -0.05, -1, 0.5, 0.05, -1, 0.5, -0.05, 1, 0.5, -0.05, -1, -0.5, 0.05, 1, -0.5, 0.05, -1, -0.5, -0.05, 1, -0.5, 0.05, 1, -0.5, -0.05, -1, -0.5, -0.05)
@@ -20,11 +50,37 @@ data = PackedVector3Array(-1, 0.5, 0.05, 1, 0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, 0
 [sub_resource type="BoxMesh" id="BoxMesh_4g1j1"]
 size = Vector3(2.5, 1, 0.1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w8q31"]
+render_priority = 0
+shader = ExtResource("2_tx7a4")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(0.25, 0.25)
+shader_parameter/albedo = ExtResource("3_cva6l")
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r4yhu"]
 data = PackedVector3Array(-1.25, 0.5, 0.05, 1.25, 0.5, 0.05, -1.25, -0.5, 0.05, 1.25, 0.5, 0.05, 1.25, -0.5, 0.05, -1.25, -0.5, 0.05, 1.25, 0.5, -0.05, -1.25, 0.5, -0.05, 1.25, -0.5, -0.05, -1.25, 0.5, -0.05, -1.25, -0.5, -0.05, 1.25, -0.5, -0.05, 1.25, 0.5, 0.05, 1.25, 0.5, -0.05, 1.25, -0.5, 0.05, 1.25, 0.5, -0.05, 1.25, -0.5, -0.05, 1.25, -0.5, 0.05, -1.25, 0.5, -0.05, -1.25, 0.5, 0.05, -1.25, -0.5, -0.05, -1.25, 0.5, 0.05, -1.25, -0.5, 0.05, -1.25, -0.5, -0.05, 1.25, 0.5, 0.05, -1.25, 0.5, 0.05, 1.25, 0.5, -0.05, -1.25, 0.5, 0.05, -1.25, 0.5, -0.05, 1.25, 0.5, -0.05, -1.25, -0.5, 0.05, 1.25, -0.5, 0.05, -1.25, -0.5, -0.05, 1.25, -0.5, 0.05, 1.25, -0.5, -0.05, -1.25, -0.5, -0.05)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v7rlg"]
 size = Vector3(2, 1, 0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_erw11"]
+render_priority = 0
+shader = ExtResource("2_tx7a4")
+shader_parameter/jitter = 0.351
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(0.25, 0.25)
+shader_parameter/albedo = ExtResource("3_cva6l")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gb13g"]
 data = PackedVector3Array(-1, 0.5, 0.05, 1, 0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, 0.05, 1, -0.5, 0.05, -1, -0.5, 0.05, 1, 0.5, -0.05, -1, 0.5, -0.05, 1, -0.5, -0.05, -1, 0.5, -0.05, -1, -0.5, -0.05, 1, -0.5, -0.05, 1, 0.5, 0.05, 1, 0.5, -0.05, 1, -0.5, 0.05, 1, 0.5, -0.05, 1, -0.5, -0.05, 1, -0.5, 0.05, -1, 0.5, -0.05, -1, 0.5, 0.05, -1, -0.5, -0.05, -1, 0.5, 0.05, -1, -0.5, 0.05, -1, -0.5, -0.05, 1, 0.5, 0.05, -1, 0.5, 0.05, 1, 0.5, -0.05, -1, 0.5, 0.05, -1, 0.5, -0.05, 1, 0.5, -0.05, -1, -0.5, 0.05, 1, -0.5, 0.05, -1, -0.5, -0.05, 1, -0.5, 0.05, 1, -0.5, -0.05, -1, -0.5, -0.05)
@@ -36,14 +92,56 @@ albedo_color = Color(0.490196, 0.298039, 0.0431373, 1)
 material = SubResource("StandardMaterial3D_t3dkd")
 size = Vector3(0.05, 1, 0.5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pfv3q"]
+render_priority = 0
+shader = ExtResource("2_tx7a4")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = false
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(0.447059, 0.294118, 0.184314, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(0.5, 1)
+shader_parameter/albedo = ExtResource("4_fnqci")
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pq7uo"]
 data = PackedVector3Array(-0.025, 0.5, 0.25, 0.025, 0.5, 0.25, -0.025, -0.5, 0.25, 0.025, 0.5, 0.25, 0.025, -0.5, 0.25, -0.025, -0.5, 0.25, 0.025, 0.5, -0.25, -0.025, 0.5, -0.25, 0.025, -0.5, -0.25, -0.025, 0.5, -0.25, -0.025, -0.5, -0.25, 0.025, -0.5, -0.25, 0.025, 0.5, 0.25, 0.025, 0.5, -0.25, 0.025, -0.5, 0.25, 0.025, 0.5, -0.25, 0.025, -0.5, -0.25, 0.025, -0.5, 0.25, -0.025, 0.5, -0.25, -0.025, 0.5, 0.25, -0.025, -0.5, -0.25, -0.025, 0.5, 0.25, -0.025, -0.5, 0.25, -0.025, -0.5, -0.25, 0.025, 0.5, 0.25, -0.025, 0.5, 0.25, 0.025, 0.5, -0.25, -0.025, 0.5, 0.25, -0.025, 0.5, -0.25, 0.025, 0.5, -0.25, -0.025, -0.5, 0.25, 0.025, -0.5, 0.25, -0.025, -0.5, -0.25, 0.025, -0.5, 0.25, 0.025, -0.5, -0.25, -0.025, -0.5, -0.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r0qyr"]
 size = Vector3(1, 1, 0.5)
 
+[sub_resource type="Animation" id="Animation_da021"]
+resource_name = "DoorClose"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.747508, 0.494488, -1.19307), Vector3(-0.944866, 0.494583, -0.972095)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.57554, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_egpkv"]
 resource_name = "DoorOpen"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,7 +149,7 @@ tracks/0/path = NodePath("Door:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.57554, 0)]
@@ -63,10 +161,34 @@ tracks/1/path = NodePath("Door:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.944866, 0.494583, -0.972095), Vector3(-0.747508, 0.494488, -1.19307)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cadeado:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.984427, 0.618022, -0.757688), Vector3(-1.06325, 0.0274358, -0.757688)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cadeado:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.35177)]
 }
 
 [sub_resource type="Animation" id="Animation_fwg4k"]
@@ -95,32 +217,29 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.944866, 0.494583, -0.972095)]
 }
-
-[sub_resource type="Animation" id="Animation_da021"]
-resource_name = "DoorClose"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Door:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cadeado:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.747508, 0.494488, -1.19307), Vector3(-0.944866, 0.494583, -0.972095)]
+"values": [Vector3(-0.984427, 0.618022, -0.757688)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Door:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cadeado:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 1.57554, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b1tvf"]
@@ -129,6 +248,35 @@ _data = {
 "DoorOpen": SubResource("Animation_egpkv"),
 "RESET": SubResource("Animation_fwg4k")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qs8l"]
+albedo_color = Color(0.482353, 0.427451, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dul07"]
+material = SubResource("StandardMaterial3D_0qs8l")
+size = Vector3(0.05, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7cma"]
+albedo_color = Color(0.25098, 0.290196, 0.317647, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_xc8w2"]
+material = SubResource("StandardMaterial3D_l7cma")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ycyw"]
+size = Vector3(2.2, 0.1, 2.7)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6ll7"]
+render_priority = 0
+shader = ExtResource("2_tx7a4")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(0.415686, 0.470588, 0.0509804, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(0.1, 0.1)
+shader_parameter/albedo = ExtResource("4_kdwwr")
 
 [node name="CemeteryShack" type="Node3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
@@ -145,6 +293,7 @@ shape = SubResource("ConcavePolygonShape3D_wxgm2")
 [node name="Wall1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.25)
 mesh = SubResource("BoxMesh_4djlx")
+surface_material_override/0 = SubResource("ShaderMaterial_cpc1g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall1"]
 
@@ -154,6 +303,7 @@ shape = SubResource("ConcavePolygonShape3D_w7a21")
 [node name="Wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.25)
 mesh = SubResource("BoxMesh_4djlx")
+surface_material_override/0 = SubResource("ShaderMaterial_6fxnm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall2"]
 
@@ -163,6 +313,7 @@ shape = SubResource("ConcavePolygonShape3D_gebxo")
 [node name="WALL3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.94, 0.5, 0)
 mesh = SubResource("BoxMesh_4g1j1")
+surface_material_override/0 = SubResource("ShaderMaterial_w8q31")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WALL3"]
 
@@ -172,6 +323,7 @@ shape = SubResource("ConcavePolygonShape3D_r4yhu")
 [node name="WALL4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.942716, 0.5, 0.292596)
 mesh = SubResource("BoxMesh_v7rlg")
+surface_material_override/0 = SubResource("ShaderMaterial_erw11")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WALL4"]
 
@@ -181,6 +333,7 @@ shape = SubResource("ConcavePolygonShape3D_gb13g")
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.944866, 0.494583, -0.972095)
 mesh = SubResource("BoxMesh_sgbkc")
+surface_material_override/0 = SubResource("ShaderMaterial_pfv3q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door"]
 
@@ -197,5 +350,18 @@ shape = SubResource("BoxShape3D_r0qyr")
 libraries = {
 "": SubResource("AnimationLibrary_b1tvf")
 }
+
+[node name="Cadeado" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.984427, 0.618022, -0.757688)
+mesh = SubResource("BoxMesh_dul07")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cadeado"]
+transform = Transform3D(-2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 0, 0, 0, 0.05, 0, 0.0527057, -0.00165713)
+mesh = SubResource("TorusMesh_xc8w2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_0ycyw")
+surface_material_override/0 = SubResource("ShaderMaterial_c6ll7")
 
 [connection signal="body_entered" from="Door/Area3D" to="." method="_on_area_3d_body_entered"]

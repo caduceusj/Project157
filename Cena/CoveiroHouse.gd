@@ -12,9 +12,8 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("Player"):
-		if(dooropen):
-			$AnimationPlayer.play("DoorClose")
-			dooropen = false
-		else:
+		if(dooropen == false and State.haveKey):
 			$AnimationPlayer.play("DoorOpen")
 			dooropen = true
+		else:
+			pass
