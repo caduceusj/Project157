@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwsqa1phk0y8r"]
+
+[ext_resource type="PackedScene" uid="uid://b04r70piq15uc" path="res://Assets/Houses/house4.fbx" id="1_lrett"]
+[ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="2_4ugyo"]
+[ext_resource type="Texture2D" uid="uid://cvpthyeccxqje" path="res://Assets/Houses/HousesTextures/house4_tex1.png" id="3_wdtoh"]
+[ext_resource type="Texture2D" uid="uid://cnjccsd6q6g88" path="res://Assets/Houses/HousesTextures/house4_tex2.png" id="4_rfl6v"]
+[ext_resource type="Texture2D" uid="uid://rq3uixsjugbi" path="res://Assets/Houses/HousesTextures/house4_tex3.png" id="5_ao6n6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ogtua"]
+render_priority = 0
+shader = ExtResource("2_4ugyo")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("3_wdtoh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljkn5"]
+render_priority = 0
+shader = ExtResource("2_4ugyo")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("4_rfl6v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rk72i"]
+render_priority = 0
+shader = ExtResource("2_4ugyo")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("5_ao6n6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ji3ml"]
+render_priority = 0
+shader = ExtResource("2_4ugyo")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("4_rfl6v")
+
+[node name="house4" instance=ExtResource("1_lrett")]
+
+[node name="house4" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ogtua")
+
+[node name="house4_closet_door1" parent="RootNode/house4" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ljkn5")
+
+[node name="house4_closet_door2" parent="RootNode/house4" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_ljkn5")
+
+[node name="house4_door1" parent="RootNode/house4" index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_ljkn5")
+
+[node name="house4_door4" parent="RootNode/house4" index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_ljkn5")
+
+[node name="house4_windows" parent="RootNode/house4" index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_rk72i")
+
+[node name="house4_door3" parent="RootNode/house4" index="5"]
+surface_material_override/0 = SubResource("ShaderMaterial_ji3ml")
+
+[node name="house4_door2" parent="RootNode/house4" index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_ji3ml")

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgx7a3wpwu0by"]
+
+[ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_fmeko"]
+[ext_resource type="Texture2D" uid="uid://d0thurx0tc5o4" path="res://Assets/Wood 1 - 128x128.png" id="2_j8s7p"]
+[ext_resource type="Texture2D" uid="uid://bb6uwnerje1cq" path="res://Assets/Concrete_Wall_005_Base Color.jpg" id="3_rp7df"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3pxxx"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ll1ym"]
+render_priority = 0
+shader = ExtResource("1_fmeko")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("2_j8s7p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gx1ur"]
+render_priority = 0
+shader = ExtResource("1_fmeko")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("3_rp7df")
+
+[sub_resource type="BoxMesh" id="BoxMesh_oc3y0"]
+material = SubResource("ShaderMaterial_gx1ur")
+size = Vector3(0.25, 0.1, 0.1)
+
+[node name="Hammer" type="Node3D"]
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.474381, 0)
+mesh = SubResource("CylinderMesh_3pxxx")
+surface_material_override/0 = SubResource("ShaderMaterial_ll1ym")
+
+[node name="Ferro" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(1.2, 0, 0, 0, -5.24537e-08, -1.2, 0, 1.2, -5.24537e-08, 0, 0.428816, 0)
+mesh = SubResource("BoxMesh_oc3y0")
+skeleton = NodePath("../..")

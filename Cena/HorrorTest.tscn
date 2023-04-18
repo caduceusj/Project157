@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b02srowwudkd6"]
+[gd_scene load_steps=33 format=3 uid="uid://b02srowwudkd6"]
 
 [ext_resource type="PackedScene" uid="uid://cwtgj76egfiwf" path="res://Assets/Cellphone/CellphoneUI.tscn" id="1_5ilj2"]
 [ext_resource type="Script" path="res://Cena/World.gd" id="1_f5pno"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://siu6olpmk22h" path="res://Cena/place_holder_house2.tscn" id="5_isjt2"]
 [ext_resource type="PackedScene" uid="uid://demtr57uoqw26" path="res://Cena/AsphaltTurn.tscn" id="7_70gi2"]
 [ext_resource type="PackedScene" uid="uid://cycywjy0yhba1" path="res://Cena/semi-pavement.tscn" id="8_g77xj"]
+[ext_resource type="PackedScene" uid="uid://bxm2308wclr70" path="res://Assets/Houses/house_1.tscn" id="11_nv54r"]
 [ext_resource type="ArrayMesh" uid="uid://drm41aft3ar6t" path="res://Assets/Bushes/BushScene.tres" id="11_obxa3"]
+[ext_resource type="PackedScene" uid="uid://dwsqa1phk0y8r" path="res://Assets/Houses/house_4.tscn" id="12_t2onk"]
 [ext_resource type="MeshLibrary" uid="uid://cwlpl112cq0pk" path="res://Cena/UrbanDecorations.tres" id="13_3ha5p"]
 [ext_resource type="PackedScene" uid="uid://bryl61cxdb2xy" path="res://Cena/DirtWalk.tscn" id="13_y0dbq"]
 [ext_resource type="PackedScene" uid="uid://7807irgrti4u" path="res://Cena/asphaltTurnRight.tscn" id="14_nkf03"]
@@ -143,6 +145,21 @@ shape = SubResource("ConcavePolygonShape3D_txyk0")
 
 [node name="PlaceHolderHouse13" parent="Floor" instance=ExtResource("25_ok0or")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 66, 0, -44.1863)
+
+[node name="house1" parent="Floor" instance=ExtResource("11_nv54r")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.0926, 2.22355, -78.3901)
+
+[node name="house2" parent="Floor" instance=ExtResource("11_nv54r")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.0926, 2.22355, -141.465)
+
+[node name="house4" parent="Floor" instance=ExtResource("12_t2onk")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.7083, 0, -94.4977)
+
+[node name="house5" parent="Floor" instance=ExtResource("12_t2onk")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.7083, 0, -110.269)
+
+[node name="house6" parent="Floor" instance=ExtResource("12_t2onk")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.7083, 0, -126.504)
 
 [node name="Floor2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 300)
@@ -430,8 +447,21 @@ skeleton = NodePath("../Pavement")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -180)
 skeleton = NodePath("../Pavement")
 
+[node name="Pavement38" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0, -180)
+skeleton = NodePath("../Pavement")
+
+[node name="Pavement39" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1272, 0, -180)
+skeleton = NodePath("../Pavement")
+
 [node name="Pavement34" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -150)
+visible = false
+skeleton = NodePath("../Pavement")
+
+[node name="Pavement37" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -210)
 skeleton = NodePath("../Pavement")
 
 [node name="Enemy" parent="." instance=ExtResource("27_dh7lm")]
