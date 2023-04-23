@@ -1,6 +1,7 @@
 extends Control
 var callChance = 0
 var NumList = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CanvasLayer.hide()
@@ -15,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Count.text = ("Count %d ") % callChance
-	if(callChance > 96):
+	if(callChance > 100):
 		State.someoneCalling = true
 		$CanvasLayer/Label.visible = false
 		$CanvasLayer/Calling.visible = true
@@ -27,12 +28,14 @@ func _process(delta):
 		$CanvasLayer/Calling/Button2.disabled = false
 		$CanvasLayer/Calling/HBoxContainer/Answer.disabled = false
 		$CanvasLayer/Calling/HBoxContainer/Reject.disabled = false
-		
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_flash"):
-		$CanvasLayer.show()
-		State.inStore = true
+		if(State.hammer):
+			pass
+		else:
+			$CanvasLayer.show()
+			State.inStore = true
 func _on_check_button_toggled(button_pressed):
 	if(State.flashlight == false):
 		State.flashlight = true

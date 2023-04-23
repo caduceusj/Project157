@@ -7,6 +7,7 @@ var auxLantern = State.flashlight
 func _ready():
 	pass # Replace with function body.
 
+#x = 0.1, y = -0.06, z = -0.17
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

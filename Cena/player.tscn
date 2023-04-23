@@ -1,12 +1,175 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl6tbmlwywgbp"]
+[gd_scene load_steps=10 format=3 uid="uid://cl6tbmlwywgbp"]
 
 [ext_resource type="Script" path="res://Script/CharacterBody3D.gd" id="1_ia7kf"]
 [ext_resource type="PackedScene" uid="uid://c0fb7ubdwscur" path="res://Cena/CellphoneNotUsing.tscn" id="2_w62ro"]
+[ext_resource type="PackedScene" uid="uid://bgx7a3wpwu0by" path="res://Assets/Hammer/hammer.tscn" id="3_7y5o3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xdkhq"]
 height = 3.18467
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0hclx"]
+
+[sub_resource type="Animation" id="Animation_mpdeh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Camera3D/Hammer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0821819, -0.317168, -0.123216)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Neck/Camera3D/Hammer/Base/Ferro:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Neck/Camera3D/Hammer/Base/Ferro:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.428816, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Neck/Camera3D/Hammer/Base/Ferro:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.2, 1.2, 1.2), Vector3(1.2, 1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_3mfei"]
+resource_name = "hammerHit"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0872665, 1.5708, 0), Vector3(0.349066, 1.5708, -0.698132), Vector3(0.0872665, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Camera3D/Hammer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0821819, -0.317168, -0.123216), Vector3(0, -0.317, -0.2), Vector3(0.082, -0.317, -0.123)]
+}
+
+[sub_resource type="Animation" id="Animation_6helv"]
+resource_name = "hammerHitBreak"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0872665, 1.5708, 0), Vector3(0.349066, 1.5708, -0.698132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Camera3D/Hammer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0821819, -0.317168, -0.123216), Vector3(0, -0.317, -0.123)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Neck/Camera3D/Hammer/Base/Ferro:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Neck/Camera3D/Hammer/Base/Ferro:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.428816, 0), Vector3(0, 0.428816, 0), Vector3(0.12, 0.6, -0.004), Vector3(1, -1, -0.1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Neck/Camera3D/Hammer/Base/Ferro:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.2, 1.2, 1.2), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7aa8f"]
+_data = {
+"RESET": SubResource("Animation_mpdeh"),
+"hammerHit": SubResource("Animation_3mfei"),
+"hammerHitBreak": SubResource("Animation_6helv")
+}
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_ia7kf")
@@ -18,9 +181,20 @@ metadata/_edit_lock_ = true
 far = 300.0
 metadata/_edit_lock_ = true
 
+[node name="Hammer" parent="Neck/Camera3D" instance=ExtResource("3_7y5o3")]
+transform = Transform3D(-1.448e-06, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.448e-06, 0.0821819, -0.317168, -0.123216)
+
+[node name="Ferro" parent="Neck/Camera3D/Hammer/Base" index="0"]
+transform = Transform3D(1.2, 0, 0, 0, -4.34399e-06, -1.2, 0, 1.2, -4.34399e-06, 0, 0.428816, 0)
+
 [node name="Cellphone" parent="Neck/Camera3D" instance=ExtResource("2_w62ro")]
 skeleton = NodePath("../../..")
-metadata/_edit_lock_ = true
+
+[node name="Lantern" type="SpotLight3D" parent="Neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.984359, 0.176174, 0, -0.176174, 0.984359, 0.0116665, -0.0632645, -0.126643)
+light_color = Color(0.976471, 0.831373, 0, 1)
+light_energy = 10.0
+spot_range = 35.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0211506)
@@ -30,3 +204,10 @@ shape = SubResource("CapsuleShape3D_xdkhq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_0hclx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7aa8f")
+}
+
+[editable path="Neck/Camera3D/Hammer"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://r2jbwxaicb65"]
+[gd_scene load_steps=7 format=3 uid="uid://r2jbwxaicb65"]
 
 [ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_cqtkh"]
 [ext_resource type="Texture2D" uid="uid://c73qlh586sml2" path="res://Assets/HouseStuff/SeekPng.com_mesh-texture-png_939457.png" id="2_a2o2j"]
@@ -26,7 +26,17 @@ shader_parameter/emission_color = Color(1, 1, 1, 1)
 shader_parameter/texture_size = Vector2(3, 3)
 shader_parameter/albedo = ExtResource("2_a2o2j")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjj5v"]
+size = Vector3(1.64261, 2.17984, 0.335087)
+
 [node name="Node3D" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19123, 0)
 mesh = SubResource("RibbonTrailMesh_eacnp")
 surface_material_override/0 = SubResource("ShaderMaterial_e5rr3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+disable_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_pjj5v")
+disabled = true

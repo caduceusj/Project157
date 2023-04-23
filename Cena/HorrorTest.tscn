@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b02srowwudkd6"]
+[gd_scene load_steps=32 format=3 uid="uid://b02srowwudkd6"]
 
 [ext_resource type="PackedScene" uid="uid://cwtgj76egfiwf" path="res://Assets/Cellphone/CellphoneUI.tscn" id="1_5ilj2"]
 [ext_resource type="Script" path="res://Cena/World.gd" id="1_f5pno"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://d04htbiecjiws" path="res://Cena/poste.tscn" id="4_xogvx"]
 [ext_resource type="PackedScene" uid="uid://siu6olpmk22h" path="res://Cena/place_holder_house2.tscn" id="5_isjt2"]
 [ext_resource type="PackedScene" uid="uid://demtr57uoqw26" path="res://Cena/AsphaltTurn.tscn" id="7_70gi2"]
-[ext_resource type="PackedScene" uid="uid://cycywjy0yhba1" path="res://Cena/semi-pavement.tscn" id="8_g77xj"]
 [ext_resource type="PackedScene" uid="uid://bxm2308wclr70" path="res://Assets/Houses/house_1.tscn" id="11_nv54r"]
 [ext_resource type="ArrayMesh" uid="uid://drm41aft3ar6t" path="res://Assets/Bushes/BushScene.tres" id="11_obxa3"]
 [ext_resource type="PackedScene" uid="uid://dwsqa1phk0y8r" path="res://Assets/Houses/house_4.tscn" id="12_t2onk"]
@@ -43,14 +42,15 @@ shader_parameter/emission_color = Color(1, 1, 1, 1)
 shader_parameter/texture_size = Vector2(0.25, 0.25)
 shader_parameter/albedo = ExtResource("3_8wuq8")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_txyk0"]
-data = PackedVector3Array(150, 0, 150, -150, 0, 150, 150, 0, -150, -150, 0, 150, -150, 0, -150, 150, 0, -150)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3iapt"]
+data = PackedVector3Array(150, 0, 250, -150, 0, 250, 150, 0, -250, -150, 0, 250, -150, 0, -250, 150, 0, -250)
 
 [sub_resource type="Environment" id="Environment_dany1"]
 background_mode = 1
 background_energy_multiplier = 0.15
 ambient_light_source = 1
 ambient_light_color = Color(1, 1, 1, 1)
+fog_enabled = true
 fog_light_color = Color(0.239216, 0.227451, 0.0705882, 1)
 fog_light_energy = 0.03
 fog_density = 0.0426
@@ -92,15 +92,14 @@ theme_override_font_sizes/font_size = 30
 text = "LOREIPSU"
 
 [node name="Player" parent="Tracker" instance=ExtResource("2_m246t")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 56.8052, 0, 12.8014)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 47.7461, 0, 61.5668)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_ymvv5")
 surface_material_override/0 = SubResource("ShaderMaterial_x7rx4")
 
 [node name="Graveyard" parent="Floor" instance=ExtResource("28_aq8ws")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.1314, -0.4, -121.238)
-skeleton = NodePath("../..")
+transform = Transform3D(-0.00617838, 0, -0.999981, 0, 1, 0, 0.999981, 0, -0.00617838, -40.5, -0.7, -121.238)
 
 [node name="PlaceHolderHouse6" parent="Floor" instance=ExtResource("5_isjt2")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -28.7391, 0, 86.9438)
@@ -138,41 +137,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -14)
 [node name="PlaceHolderHouse" parent="Floor" instance=ExtResource("2_mujcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -14)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_txyk0")
-
 [node name="PlaceHolderHouse13" parent="Floor" instance=ExtResource("25_ok0or")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 66, 0, -44.1863)
 
 [node name="house1" parent="Floor" instance=ExtResource("11_nv54r")]
-transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.0926, 2.22355, -78.3901)
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.093, 0, -80)
 
 [node name="house2" parent="Floor" instance=ExtResource("11_nv54r")]
-transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.0926, 2.22355, -141.465)
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 23.093, 0, -140)
 
 [node name="house4" parent="Floor" instance=ExtResource("12_t2onk")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.7083, 0, -94.4977)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.708, 0, -95)
 
 [node name="house5" parent="Floor" instance=ExtResource("12_t2onk")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.7083, 0, -110.269)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.708, 0, -110)
 
 [node name="house6" parent="Floor" instance=ExtResource("12_t2onk")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.7083, 0, -126.504)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.708, 0, -125)
 
-[node name="Floor2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 300)
-mesh = SubResource("PlaneMesh_ymvv5")
-surface_material_override/0 = SubResource("ShaderMaterial_x7rx4")
+[node name="house7" parent="Floor" instance=ExtResource("12_t2onk")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.708, 0, -155)
 
-[node name="PlaceHolderHouse" parent="Floor2" instance=ExtResource("5_isjt2")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -6, 0, -87)
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_txyk0")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3iapt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dany1")
@@ -410,9 +399,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 109.9, 0, -60)
 skeleton = NodePath("../..")
 
-[node name="Pavement14" parent="NavigationRegion3D" instance=ExtResource("8_g77xj")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.31134e-06, 0, 60)
-
 [node name="Pavement22" parent="NavigationRegion3D" instance=ExtResource("21_hmtge")]
 transform = Transform3D(1, 0, 5.56363e-08, 0, 1, 0, -5.56363e-08, 0, 1, 128, 0, 1.99999)
 
@@ -437,6 +423,10 @@ skeleton = NodePath("../Pavement")
 
 [node name="Pavement33" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -120)
+skeleton = NodePath("../Pavement")
+
+[node name="Pavement40" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -150.023)
 skeleton = NodePath("../Pavement")
 
 [node name="Pavement35" parent="NavigationRegion3D" instance=ExtResource("3_uh7im")]
@@ -466,9 +456,10 @@ skeleton = NodePath("../Pavement")
 
 [node name="Enemy" parent="." instance=ExtResource("27_dh7lm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26464, 3.90606, 55.5568)
+visible = false
 
 [node name="Key" parent="." instance=ExtResource("24_sphbm")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.1618, 0.147284, -164.735)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.1618, 0.147284, -164.735)
 
 [node name="Pavement" parent="." instance=ExtResource("4_2tsvc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -180.178)

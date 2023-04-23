@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgx7a3wpwu0by"]
+[gd_scene load_steps=10 format=3 uid="uid://dq5bs47gmxnuc"]
 
-[ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_fmeko"]
-[ext_resource type="Texture2D" uid="uid://d0thurx0tc5o4" path="res://Assets/Wood 1 - 128x128.png" id="2_j8s7p"]
-[ext_resource type="Texture2D" uid="uid://bb6uwnerje1cq" path="res://Assets/Concrete_Wall_005_Base Color.jpg" id="3_rp7df"]
+[ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_3vnbs"]
+[ext_resource type="Script" path="res://Assets/Hammer/hammerCollectable.gd" id="1_uvvei"]
+[ext_resource type="Texture2D" uid="uid://d0thurx0tc5o4" path="res://Assets/Wood 1 - 128x128.png" id="2_vqkry"]
+[ext_resource type="Texture2D" uid="uid://bb6uwnerje1cq" path="res://Assets/Concrete_Wall_005_Base Color.jpg" id="3_4u66u"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3pxxx"]
 top_radius = 0.05
@@ -11,7 +12,7 @@ height = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ll1ym"]
 render_priority = 0
-shader = ExtResource("1_fmeko")
+shader = ExtResource("1_3vnbs")
 shader_parameter/jitter = 0.5
 shader_parameter/jitter_z_coordinate = true
 shader_parameter/jitter_depth_independent = true
@@ -20,11 +21,11 @@ shader_parameter/alpha_scissor = 1.0
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/emission_color = Color(1, 1, 1, 1)
 shader_parameter/texture_size = Vector2(1, 1)
-shader_parameter/albedo = ExtResource("2_j8s7p")
+shader_parameter/albedo = ExtResource("2_vqkry")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gx1ur"]
 render_priority = 0
-shader = ExtResource("1_fmeko")
+shader = ExtResource("1_3vnbs")
 shader_parameter/jitter = 0.5
 shader_parameter/jitter_z_coordinate = true
 shader_parameter/jitter_depth_independent = true
@@ -33,13 +34,17 @@ shader_parameter/alpha_scissor = 1.0
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/emission_color = Color(1, 1, 1, 1)
 shader_parameter/texture_size = Vector2(1, 1)
-shader_parameter/albedo = ExtResource("3_rp7df")
+shader_parameter/albedo = ExtResource("3_4u66u")
 
 [sub_resource type="BoxMesh" id="BoxMesh_oc3y0"]
 material = SubResource("ShaderMaterial_gx1ur")
 size = Vector3(0.25, 0.1, 0.1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mim0s"]
+size = Vector3(0.758247, 0.738491, 0.677879)
+
 [node name="Hammer" type="Node3D"]
+script = ExtResource("1_uvvei")
 
 [node name="Base" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.474381, 0)
@@ -57,3 +62,11 @@ layers = 2
 light_color = Color(0.85098, 0.6, 0, 1)
 light_energy = 0.01
 omni_range = 0.314
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.716475, 0)
+shape = SubResource("BoxShape3D_mim0s")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

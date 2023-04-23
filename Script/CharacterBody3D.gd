@@ -14,14 +14,30 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton and State.inStore == false:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel")  or event.is_action_pressed("ui_flash"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if(event.is_action_pressed("ui_flash") and State.hammer == true):
+			pass
+		elif(event.is_action_pressed("ui_cancel")):
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is  InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x*0.001)
 			camera.rotate_x(-event.relative.y*0.001)
 			camera.rotation.x  = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and State.hammer == true and event.is_action_pressed("mouseClick"):
+		$AnimationPlayer.play("hammerHit")
+		
 func _physics_process(delta):
+	if(State.hammer == true):
+		$Neck/Camera3D/Cellphone.visible = false
+		$Neck/Camera3D/Lantern.visible = true
+		$Neck/Camera3D/Hammer.visible = true
+	else:
+		$Neck/Camera3D/Hammer.visible = false
+		$Neck/Camera3D/Cellphone.visible = true
+		$Neck/Camera3D/Lantern.visible = false
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

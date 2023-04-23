@@ -1,11 +1,6 @@
-extends Node
-var someoneCalling = false
-var knowSomeoneCalling = false
-var flashlight = true
-var flashAnim = true
-var inStore = false
-var haveKey = false
-var hammer = false
+extends MeshInstance3D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
