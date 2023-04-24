@@ -27,7 +27,7 @@ shader_parameter/texture_size = Vector2(3, 3)
 shader_parameter/albedo = ExtResource("2_a2o2j")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pjj5v"]
-size = Vector3(1.64261, 2.17984, 0.335087)
+size = Vector3(1.64261, 2.17984, 0.122355)
 
 [node name="Node3D" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19123, 0)

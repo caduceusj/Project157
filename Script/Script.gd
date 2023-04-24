@@ -8,11 +8,14 @@ extends Node3D
 @onready var hammered = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	collision3.set_deferred("disabled", false)
+	collision4.set_deferred("disabled", false)
 	pass # Replace with function body.
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	pass
 
 
@@ -22,8 +25,7 @@ func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 		$Pillar/Grade2.visible = true
 		collision.set_deferred("disabled", false)
 		collision2.set_deferred("disabled", false)
-		collision3.set_deferred("disabled", false)
-		collision4.set_deferred("disabled", false)
+
 
 
 
@@ -37,4 +39,10 @@ func _on_hammer_area_area_shape_entered(area_rid, area, area_shape_index, local_
 		print("detected")
 		if(hammered == 3):
 			State.breakHammer = true
+		if(hammered == 4):
+			$Pillar8/Node3D3.visible = false
+			$Pillar8/Node3D4.visible = false
+			$Pillar8/Cadeado.visible = false
+			collision3.set_deferred("disabled", true)
+			collision4.set_deferred("disabled", true)
 		

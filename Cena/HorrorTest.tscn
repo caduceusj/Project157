@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://b02srowwudkd6"]
+[gd_scene load_steps=32 format=3 uid="uid://bgnqt7wpyvbbe"]
 
 [ext_resource type="PackedScene" uid="uid://cwtgj76egfiwf" path="res://Assets/Cellphone/CellphoneUI.tscn" id="1_5ilj2"]
-[ext_resource type="Script" path="res://Cena/World.gd" id="1_f5pno"]
+[ext_resource type="Script" path="res://Script/World.gd" id="1_l6naa"]
 [ext_resource type="Script" path="res://Script/Tracker.gd" id="1_qermc"]
 [ext_resource type="PackedScene" uid="uid://cl6tbmlwywgbp" path="res://Cena/player.tscn" id="2_m246t"]
 [ext_resource type="PackedScene" uid="uid://bnqmiey8u80a5" path="res://Cena/place_holder_house.tscn" id="2_mujcd"]
@@ -23,8 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://blp6yv7lu5ndc" path="res://Cena/AsphaltBothSides.tscn" id="22_t5yu0"]
 [ext_resource type="PackedScene" uid="uid://duu6af6kvld3b" path="res://Cena/key_scene.tscn" id="24_sphbm"]
 [ext_resource type="PackedScene" uid="uid://dpb1g4o8nivnd" path="res://Cena/place_holder_house3.tscn" id="25_ok0or"]
-[ext_resource type="PackedScene" uid="uid://be6prodsiq2l4" path="res://Cena/enemy.tscn" id="27_dh7lm"]
-[ext_resource type="PackedScene" uid="uid://bbw2rcjpu4rm7" path="res://Cena/Cemetery.tscn" id="28_aq8ws"]
+[ext_resource type="PackedScene" uid="uid://ctblrrs60oey2" path="res://Cena/enemy.tscn" id="27_dh7lm"]
+[ext_resource type="PackedScene" uid="uid://dnbx1i65k6ig8" path="res://Cena/Cemetery.tscn" id="28_aq8ws"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ymvv5"]
 size = Vector2(300, 500)
@@ -69,7 +69,7 @@ agent_radius = 4.0
 agent_max_climb = 1.0
 
 [node name="World" type="Node"]
-script = ExtResource("1_f5pno")
+script = ExtResource("1_l6naa")
 
 [node name="Control" parent="." instance=ExtResource("1_5ilj2")]
 mouse_filter = 2
@@ -91,7 +91,7 @@ theme_override_font_sizes/font_size = 30
 text = "LOREIPSU"
 
 [node name="Player" parent="Tracker" instance=ExtResource("2_m246t")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 14.2078, -3, 39.8273)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -55.3513, -3, 129.472)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_ymvv5")
@@ -470,8 +470,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.205
 skeleton = NodePath("../Pavement")
 
 [node name="Enemy" parent="." instance=ExtResource("27_dh7lm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26464, 3.90606, 55.5568)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35453, 0)
 
 [node name="Key" parent="." instance=ExtResource("24_sphbm")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.1618, 0.147284, -164.735)

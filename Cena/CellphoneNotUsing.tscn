@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0fb7ubdwscur"]
+[gd_scene load_steps=14 format=3 uid="uid://bcb4v2fjmyoyv"]
 
-[ext_resource type="Script" path="res://Cena/Cellphone.gd" id="1_826r2"]
+[ext_resource type="Script" path="res://Script/Cellphone.gd" id="1_agaqt"]
 [ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_unlit.gdshader" id="1_pilek"]
 [ext_resource type="Texture2D" uid="uid://cy0dlojfhqytf" path="res://Assets/Cellphone/Placeholder.jpg" id="2_yxjet"]
 [ext_resource type="Texture2D" uid="uid://c2ux05uty4amx" path="res://Assets/Cellphone/Incoming Call.PNG" id="4_qha2m"]
@@ -156,7 +156,7 @@ _data = {
 [node name="Cellphone" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.06, -0.17)
 mesh = SubResource("QuadMesh_0gsdq")
-script = ExtResource("1_826r2")
+script = ExtResource("1_agaqt")
 
 [node name="Screen" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0.001)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b781bwok22pvt"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cl6tbmlwywgbp" path="res://Cena/player.tscn" id="1_0j6fb"]
-[ext_resource type="Script" path="res://Cena/World.gd" id="1_2rij6"]
+[ext_resource type="Script" path="res://Script/World.gd" id="1_2rij6"]
 [ext_resource type="PackedScene" uid="uid://be6prodsiq2l4" path="res://Cena/enemy.tscn" id="2_lfmq2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_rejey"]

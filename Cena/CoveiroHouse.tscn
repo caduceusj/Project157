@@ -1,6 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://cl0t2x4vi7prf"]
+[gd_scene load_steps=35 format=3 uid="uid://ctwlbxc3c6the"]
 
-[ext_resource type="Script" path="res://Cena/CoveiroHouse.gd" id="1_hic52"]
+[ext_resource type="Script" path="res://Script/CoveiroHouse.gd" id="1_ia7l4"]
 [ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="2_tx7a4"]
 [ext_resource type="Texture2D" uid="uid://dymn5vcos8wfe" path="res://Assets/Wood 17 - 128x128.png" id="3_cva6l"]
 [ext_resource type="Texture2D" uid="uid://d0thurx0tc5o4" path="res://Assets/Wood 1 - 128x128.png" id="4_fnqci"]
@@ -281,7 +281,7 @@ shader_parameter/albedo = ExtResource("4_kdwwr")
 
 [node name="CemeteryShack" type="Node3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-script = ExtResource("1_hic52")
+script = ExtResource("1_ia7l4")
 
 [node name="FLOOR" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_s8ib0")

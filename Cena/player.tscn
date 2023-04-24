@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cl6tbmlwywgbp"]
 
 [ext_resource type="Script" path="res://Script/CharacterBody3D.gd" id="1_ia7kf"]
-[ext_resource type="PackedScene" uid="uid://c0fb7ubdwscur" path="res://Cena/CellphoneNotUsing.tscn" id="2_w62ro"]
+[ext_resource type="PackedScene" uid="uid://bcb4v2fjmyoyv" path="res://Cena/CellphoneNotUsing.tscn" id="2_w62ro"]
 [ext_resource type="PackedScene" uid="uid://bgx7a3wpwu0by" path="res://Assets/Hammer/hammer.tscn" id="3_7y5o3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xdkhq"]
