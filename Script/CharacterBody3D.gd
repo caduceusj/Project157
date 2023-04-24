@@ -6,6 +6,10 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+#SetHammerHitMonitorable
+@onready var hammerDetect = get_node("Neck/Camera3D/Hammer/Area3D")
+
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 func _ready():
@@ -27,7 +31,15 @@ func _unhandled_input(event: InputEvent):
 			camera.rotate_x(-event.relative.y*0.001)
 			camera.rotation.x  = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and State.hammer == true and event.is_action_pressed("mouseClick"):
-		$AnimationPlayer.play("hammerHit")
+		if(State.breakHammer):
+			$AnimationPlayer.play("hammerHitBreak")
+			await($AnimationPlayer.animation_finished)
+			State.hammer = false
+		else:
+			$AnimationPlayer.play("hammerHit")
+			hammerDetect.set_deferred("monitorable", true)
+			await($AnimationPlayer.animation_finished)
+			hammerDetect.set_deferred("monitorable", false)
 		
 func _physics_process(delta):
 	if(State.hammer == true):

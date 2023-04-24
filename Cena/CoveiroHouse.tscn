@@ -250,18 +250,18 @@ _data = {
 "RESET": SubResource("Animation_fwg4k")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qs8l"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6cml"]
 albedo_color = Color(0.482353, 0.427451, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dul07"]
-material = SubResource("StandardMaterial3D_0qs8l")
+material = SubResource("StandardMaterial3D_q6cml")
 size = Vector3(0.05, 0.1, 0.1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7cma"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b834l"]
 albedo_color = Color(0.25098, 0.290196, 0.317647, 1)
 
 [sub_resource type="TorusMesh" id="TorusMesh_xc8w2"]
-material = SubResource("StandardMaterial3D_l7cma")
+material = SubResource("StandardMaterial3D_b834l")
 
 [sub_resource type="BoxMesh" id="BoxMesh_0ycyw"]
 size = Vector3(2.2, 0.1, 2.7)

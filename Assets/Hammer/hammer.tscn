@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgx7a3wpwu0by"]
+[gd_scene load_steps=9 format=3 uid="uid://bgx7a3wpwu0by"]
 
 [ext_resource type="Shader" path="res://godot-psx-master/Shaders/psx_lit.gdshader" id="1_fmeko"]
 [ext_resource type="Texture2D" uid="uid://d0thurx0tc5o4" path="res://Assets/Wood 1 - 128x128.png" id="2_j8s7p"]
@@ -39,6 +39,9 @@ shader_parameter/albedo = ExtResource("3_rp7df")
 material = SubResource("ShaderMaterial_gx1ur")
 size = Vector3(0.25, 0.1, 0.1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8q7j4"]
+size = Vector3(0.173646, 0.111629, 0.298941)
+
 [node name="Hammer" type="Node3D"]
 
 [node name="Base" type="MeshInstance3D" parent="."]
@@ -57,3 +60,10 @@ layers = 2
 light_color = Color(0.85098, 0.6, 0, 1)
 light_energy = 0.01
 omni_range = 0.314
+
+[node name="Area3D" type="Area3D" parent="." groups=["Hammer"]]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00146249, 0.909596, 0.0181791)
+shape = SubResource("BoxShape3D_8q7j4")

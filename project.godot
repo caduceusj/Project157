@@ -22,6 +22,11 @@ video/size/window_height_override=600
 
 State="*res://Script/State.gd"
 
+[debug]
+
+shapes/navigation/geometry_edge_color=Color(1, 0.341176, 0.466667, 1)
+shapes/paths/geometry_color=Color(0.85098, 0, 0.639216, 0.4)
+
 [display]
 
 window/size/viewport_width=640
