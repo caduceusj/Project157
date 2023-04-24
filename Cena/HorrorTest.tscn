@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bgnqt7wpyvbbe"]
+[gd_scene load_steps=33 format=3 uid="uid://bgnqt7wpyvbbe"]
 
 [ext_resource type="PackedScene" uid="uid://cwtgj76egfiwf" path="res://Assets/Cellphone/CellphoneUI.tscn" id="1_5ilj2"]
 [ext_resource type="Script" path="res://Script/World.gd" id="1_l6naa"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://blp6yv7lu5ndc" path="res://Cena/AsphaltBothSides.tscn" id="22_t5yu0"]
 [ext_resource type="PackedScene" uid="uid://duu6af6kvld3b" path="res://Cena/key_scene.tscn" id="24_sphbm"]
 [ext_resource type="PackedScene" uid="uid://dpb1g4o8nivnd" path="res://Cena/place_holder_house3.tscn" id="25_ok0or"]
+[ext_resource type="PackedScene" uid="uid://bf8ebonqoxkkg" path="res://Cena/PlaceholderGasStation.tscn" id="26_f8sqy"]
 [ext_resource type="PackedScene" uid="uid://ctblrrs60oey2" path="res://Cena/enemy.tscn" id="27_dh7lm"]
 [ext_resource type="PackedScene" uid="uid://dnbx1i65k6ig8" path="res://Cena/Cemetery.tscn" id="28_aq8ws"]
 
@@ -91,7 +92,7 @@ theme_override_font_sizes/font_size = 30
 text = "LOREIPSU"
 
 [node name="Player" parent="Tracker" instance=ExtResource("2_m246t")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -55.3513, -3, 129.472)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -63.6472, 9.3637, 76.6385)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_ymvv5")
@@ -474,3 +475,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35453, 0)
 
 [node name="Key" parent="." instance=ExtResource("24_sphbm")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.1618, 0.147284, -164.735)
+
+[node name="Node3D" parent="." instance=ExtResource("26_f8sqy")]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -88.598, 0.172816, -29.0822)

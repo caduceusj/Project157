@@ -20,7 +20,7 @@ func _process(delta):
 	if(State.inStore):
 		get_node(".").visible = false
 		State.flashAnim = false
-	if(State.flashAnim == false and State.inStore == false):
+	if(State.flashAnim == false and State.inStore == false and State.hammer == false):
 		if(State.flashlight == true and State.flashlight != auxLantern ):
 			get_node(".").visible = true
 			$Lantern.visible = true
